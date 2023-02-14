@@ -1,4 +1,5 @@
-FROM alpine:latest
+ARG tgtplatform=linux/arm64
+FROM --platform=${tgtplatform} alpine:latest
 ARG host_name=avahi
 RUN apk update
 RUN apk add avahi avahi-tools
